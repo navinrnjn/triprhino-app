@@ -1,10 +1,15 @@
-<div>
-    <ul>
-        <li><a routerLinkActive="active" routerLink="home">HOME</a></li>
-        <li><a routerLinkActive="active" routerLink="hotels">HOTELS</a></li>
-        <li><a routerLinkActive="active" routerLink="events">EVENTS</a></li>
-    </ul>
-</div>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">TRIPRHINO</a>
+        </div>
+        <ul class="nav navbar-nav">
+                <li><a routerLinkActive="active" routerLink="home">HOME</a></li>
+                <li><a routerLinkActive="active" routerLink="hotels">HOTELS</a></li>
+                <li><a routerLinkActive="active" routerLink="events">EVENTS</a></li>
+            </ul>
+    </div>
+</nav>
 <div class="content">
     <router-outlet></router-outlet>
 </div>
