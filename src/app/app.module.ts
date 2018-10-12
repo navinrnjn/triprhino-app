@@ -14,6 +14,7 @@ import { ErrorComponent } from './views/error.component';
 import { TemplateComponent } from './views/template.component';
 import { EventsComponent } from './views/events.component';
 import { HotelsComponent } from './views/hotels.component';
+import { AccomodationComponent } from './views/Accomodation/accomodation/accomodation.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HotelsComponent } from './views/hotels.component';
     ErrorComponent,
     TemplateComponent,
     EventsComponent,
-    HotelsComponent
+    HotelsComponent,
+    AccomodationComponent
   ],
   imports: [
     BrowserModule,
