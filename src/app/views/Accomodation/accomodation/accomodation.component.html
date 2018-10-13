@@ -1,3 +1,62 @@
-<p>
-  accomodation works!
-</p>
+<div class="container">
+  <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myAddServiceModal">Add Service</button>
+
+  <!-- Modal -->
+  <div id="myAddServiceModal" class="modal fade custom-modal-top" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add new service</h4>
+        </div>
+        <div class="modal-body">
+          <form name="addServiceForm">
+            <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+              <ngb-panel title="Service Descritption">
+                <ng-template ngbPanelContent>
+                  <div class="form-group">
+                    <label for="name">Service Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" id="description">
+                  </div>
+                  <div class="form-group">
+                      <label for="serviceType">Service Type</label>
+                      <div  id="serviceType" class="dropdown">
+                          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Service Type
+                          <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                              <li><span>Item1</span></li>
+                              <li><span>Item2</span></li>
+                              <li><span>Item3</span></li>
+                          </ul>
+                        </div>  
+                    </div>
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel title="Ammenities">
+                  <ng-template ngbPanelContent>
+                    <span>Ammentities Come here</span>
+                  </ng-template>
+                </ngb-panel>
+                <ngb-panel title="Others">
+                    <ng-template ngbPanelContent>
+                        <span>Other details come here</span>
+                    </ng-template>
+                  </ngb-panel>
+            </ngb-accordion>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
+          <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button> -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
