@@ -17,6 +17,7 @@ import { HotelsComponent } from './views/hotels.component';
 import { AccomodationComponent } from './views/Accomodation/accomodation/accomodation.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AddServicecomponentComponent } from './compoments/add-servicecomponent/add-servicecomponent.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     TemplateComponent,
     EventsComponent,
     HotelsComponent,
-    AccomodationComponent
+    AccomodationComponent,
+    AddServicecomponentComponent
   ],
   imports: [
     NgbModule,

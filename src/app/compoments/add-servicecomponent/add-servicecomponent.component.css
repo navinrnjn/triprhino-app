@@ -1,0 +1,15 @@
+.form-control-select {
+    height: 30px !important;
+}
+
+.container-input-leftspace {
+    padding-left: 1px;
+}
+
+.container-row-leftspace {
+    margin-left: -20px;
+}
+
+.input-spacer {
+ margin: 10px;
+}

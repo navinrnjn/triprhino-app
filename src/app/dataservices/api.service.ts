@@ -31,7 +31,7 @@ export class ApiService {
   getProfile(id) {
     return this.http.get(this.api + "GetProfile/" + id).pipe(
       map((res: Response) => { 
-        return res;
+        return res.json();
     }));
   }
 

@@ -12,44 +12,23 @@
           <h4 class="modal-title">Add new service</h4>
         </div>
         <div class="modal-body">
-          <form name="addServiceForm">
-            <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-              <ngb-panel title="Service Descritption">
+          <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+            <ngb-panel title="Servie Description">
+              <ng-template ngbPanelContent>
+                <add-servicecomponent></add-servicecomponent>
+              </ng-template>
+            </ngb-panel>
+            <ngb-panel title="Ammenities">
                 <ng-template ngbPanelContent>
-                  <div class="form-group">
-                    <label for="name">Service Name</label>
-                    <input type="text" class="form-control" id="name" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="description">Description</label>
-                    <input type="text" class="form-control" id="description">
-                  </div>
-                  <div class="form-group">
-                      <label for="serviceType">Service Type</label>
-                      <div  id="serviceType" class="dropdown">
-                          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Service Type
-                          <span class="caret"></span></button>
-                          <ul class="dropdown-menu">
-                              <li><span>Item1</span></li>
-                              <li><span>Item2</span></li>
-                              <li><span>Item3</span></li>
-                          </ul>
-                        </div>  
-                    </div>
+                  
                 </ng-template>
               </ngb-panel>
-              <ngb-panel title="Ammenities">
+              <ngb-panel title="Images">
                   <ng-template ngbPanelContent>
-                    <span>Ammentities Come here</span>
+                    
                   </ng-template>
                 </ngb-panel>
-                <ngb-panel title="Others">
-                    <ng-template ngbPanelContent>
-                        <span>Other details come here</span>
-                    </ng-template>
-                  </ngb-panel>
-            </ngb-accordion>
-          </form>
+          </ngb-accordion>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
