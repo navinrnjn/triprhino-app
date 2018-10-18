@@ -6,11 +6,13 @@ import { HomeComponent } from './views/home.component';
 import { HotelsComponent } from './views/hotels.component';
 import { EventsComponent } from './views/events.component';
 import { ErrorComponent } from './views/error.component';
+import { AccomodationComponent } from './views/Accomodation/accomodation/accomodation.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'hotels', component: HotelsComponent },
+  { path: 'hotels', component: HotelsComponent },  
+  { path: 'accomodations', component: AccomodationComponent },
   { path: 'events', component: EventsComponent },
   { path: 'error', component: ErrorComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
