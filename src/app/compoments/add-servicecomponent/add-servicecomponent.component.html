@@ -9,9 +9,7 @@
       <div class="row">
         <div class="col-md-12">
           <select class="form-control form-control-sm form-control-select" name="" id="">
-            <option value="Test">Test</option>
-            <option value="Test">Test</option>
-            <option value="Test">Test</option>
+            <option *ngFor="let serviceType of serviceTypes" value="serviceType.AccommodationTypeId">{{serviceType.Name}}</option>           
           </select>
         </div>
       </div>
