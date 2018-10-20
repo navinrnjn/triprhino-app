@@ -14,6 +14,10 @@ import { ErrorComponent } from './views/error.component';
 import { TemplateComponent } from './views/template.component';
 import { EventsComponent } from './views/events.component';
 import { HotelsComponent } from './views/hotels.component';
+import { AccomodationComponent } from './views/Accomodation/accomodation/accomodation.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AddServicecomponentComponent } from './compoments/add-servicecomponent/add-servicecomponent.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +27,17 @@ import { HotelsComponent } from './views/hotels.component';
     ErrorComponent,
     TemplateComponent,
     EventsComponent,
-    HotelsComponent
+    HotelsComponent,
+    AccomodationComponent,
+    AddServicecomponentComponent
   ],
   imports: [
+    NgbModule,
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     HttpModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
