@@ -13,9 +13,8 @@ import { Ammenities, IAmmenities } from '../../../models/ammenities';
 export class AccomodationComponent implements OnInit {
 
   private ammenities: IAmmenities[];
-
   private fileData: File[];
-  private serviceTypes: any[];
+  private _modal = null;
 
   constructor(private config: NgbAccordionConfig, private accomodationService: AccomodationService) {
     this.config.type = "info";
@@ -24,10 +23,14 @@ export class AccomodationComponent implements OnInit {
   }
 
   ngOnInit() {
-    var response = this.accomodationService.getAccommodationTypes().subscribe((result) => {
-      this.serviceTypes = result;
-    });
   }
+
+  bindModal(modal) { this._modal = modal; }
+
+  open(client) {
+    this._modal.open();
+    console.log({client});
+}
 
   toggleSelect(data: IAmmenities) {
     data.isPresent = !data.isPresent;

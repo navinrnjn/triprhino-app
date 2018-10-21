@@ -18,6 +18,7 @@ import { AccomodationComponent } from './views/Accomodation/accomodation/accomod
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AddServicecomponentComponent } from './compoments/add-servicecomponent/add-servicecomponent.component';
+import { ModalcomponentComponent } from './compoments/modal-dialog/modalcomponent/modalcomponent.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AddServicecomponentComponent } from './compoments/add-servicecomponent/
     EventsComponent,
     HotelsComponent,
     AccomodationComponent,
-    AddServicecomponentComponent
+    AddServicecomponentComponent,
+    ModalcomponentComponent
   ],
   imports: [
     NgbModule,
