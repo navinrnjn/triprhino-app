@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IServiceDescription } from 'src/app/models/servicedescription';
+// import { IServiceDescription } from 'src/app/models/servicedescription';
 import { AccomodationService } from 'src/app/views/Accomodation/accomodation/accomodation.service';
 
 @Component({
