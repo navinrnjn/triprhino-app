@@ -2,36 +2,34 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './/app-routing.module';
 
 import { ApiService } from './dataservices/api.service';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './views/home.component';
-import { LoginComponent } from './views/login.component';
-import { ErrorComponent } from './views/error.component';
-import { TemplateComponent } from './views/template.component';
-import { EventsComponent } from './views/events.component';
-import { HotelsComponent } from './views/hotels.component';
-import { AccomodationComponent } from './views/Accomodation/accomodation/accomodation.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { AddServicecomponentComponent } from './compoments/add-servicecomponent/add-servicecomponent.component';
-import { ModalcomponentComponent } from './compoments/modal-dialog/modalcomponent/modalcomponent.component';
+import { HomeComponent } from './components/home/home.component';
+import { ErrorComponent } from './components/shared/error.component';
+import { AccommodationComponent } from './components/accommodations/accommodation.component';
+import { AddServicecomponentComponent } from './components/accommodations/add-servicecomponent/add-servicecomponent.component';
+import { ModalcomponentComponent } from './components/accommodations/modal-dialog/modalcomponent/modalcomponent.component';
+import { EditContentComponent } from './components/content/edit.component';
+import { ViewContentComponent } from './components/content/view.component';
+import { LayoutComponent } from './components/shared/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent,
     ErrorComponent,
-    TemplateComponent,
-    EventsComponent,
-    HotelsComponent,
-    AccomodationComponent,
+    AccommodationComponent,
     AddServicecomponentComponent,
-    ModalcomponentComponent
+    ModalcomponentComponent,
+    EditContentComponent,
+    ViewContentComponent,
+    LayoutComponent
   ],
   imports: [
     NgbModule,

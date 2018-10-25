@@ -10,8 +10,9 @@ export class ApiService {
 
   api = null;
 
-  constructor(private http: Http) { 
-    this.api = 'http://localhost:9009/api/';
+  constructor(private http: Http) {
+    //this.api = 'https://trapi.pythonanywhere.com/api/app/';
+    this.api = 'http://localhost:9009/api/app/';
   }
 
   hello_world() {
