@@ -2,7 +2,7 @@
   <button type="button" class="btn btn-info btn-md" (click)=open(test)>Add Service</button>
 
   <app-modalcomponent id="myAddServiceModal" dialogTitle="Add Service" #myAddServiceModal>
-      {{ bindModal(myAddServiceModal) }}
+    {{ bindModal(myAddServiceModal) }}
     <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
       <ngb-panel title="Servie Description">
         <ng-template ngbPanelContent>
@@ -32,6 +32,11 @@
               </ol>
             </div>
           </div>
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel title="Test">
+        <ng-template ngbPanelContent>
+          <app-fileupload></app-fileupload>
         </ng-template>
       </ngb-panel>
     </ngb-accordion>

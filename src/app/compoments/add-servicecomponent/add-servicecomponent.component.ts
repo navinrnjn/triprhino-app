@@ -10,7 +10,7 @@ import { AccomodationService } from 'src/app/views/Accomodation/accomodation/acc
 export class AddServicecomponentComponent implements OnInit {
 
   @Input()
-  model: IServiceDescription;  
+  //model: IServiceDescription;  
   private serviceTypes: any[]=[];
 
   constructor(private accomodationService: AccomodationService) {

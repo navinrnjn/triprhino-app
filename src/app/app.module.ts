@@ -19,6 +19,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AddServicecomponentComponent } from './compoments/add-servicecomponent/add-servicecomponent.component';
 import { ModalcomponentComponent } from './compoments/modal-dialog/modalcomponent/modalcomponent.component';
+import { FileuploadComponent } from './compoments/file-upload/fileupload/fileupload.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ModalcomponentComponent } from './compoments/modal-dialog/modalcomponen
     HotelsComponent,
     AccomodationComponent,
     AddServicecomponentComponent,
-    ModalcomponentComponent
+    ModalcomponentComponent,
+    FileuploadComponent
   ],
   imports: [
     NgbModule,
