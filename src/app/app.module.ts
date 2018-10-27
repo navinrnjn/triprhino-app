@@ -4,11 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { AppRoutingModule } from './/app-routing.module';
-
 import { ApiService } from './dataservices/api.service';
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/shared/error.component';
@@ -18,6 +15,8 @@ import { ModalcomponentComponent } from './components/accommodations/modal-dialo
 import { EditContentComponent } from './components/content/edit.component';
 import { ViewContentComponent } from './components/content/view.component';
 import { LayoutComponent } from './components/shared/layout.component';
+import { FileuploadComponent } from './components/accommodations/file-upload/fileupload/fileupload.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -27,9 +26,11 @@ import { LayoutComponent } from './components/shared/layout.component';
     AccommodationComponent,
     AddServicecomponentComponent,
     ModalcomponentComponent,
+    FileuploadComponent,
     EditContentComponent,
     ViewContentComponent,
-    LayoutComponent
+    LayoutComponent,
+    CarouselComponent
   ],
   imports: [
     NgbModule,

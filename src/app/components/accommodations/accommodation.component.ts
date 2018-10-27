@@ -29,8 +29,8 @@ export class AccommodationComponent implements OnInit {
 
   open(client) {
     this._modal.open();
-    console.log({client});
-}
+    console.log({ client });
+  }
 
   toggleSelect(data: IAmmenities) {
     data.isPresent = !data.isPresent;
