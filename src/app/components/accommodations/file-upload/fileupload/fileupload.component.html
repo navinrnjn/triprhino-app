@@ -10,8 +10,8 @@
 </div>
 <div class="row" *ngIf="thumbnailImages.length > 0">
     <div class="col-md-12">
-        <div class="col-md-2 preview-image" *ngFor="let image of thumbnailImages">
-            <img [src]="domSanitizer.bypassSecurityTrustUrl(image.srcData) || 'http://placehold.it/180'" alt="{{image.name}}" class="img-thumbnail" width="auto" height="auto">
+        <div class="preview-image" *ngFor="let image of thumbnailImages">
+            <img [src]="domSanitizer.bypassSecurityTrustUrl(image.srcData) || 'http://placehold.it/180'" alt="{{image.name}}" class="img-thumbnail" width="104" height="36">
             <div class="preview-image-close"><i (click)="removeImage(image)" class="fa fa-times fa-lg"></i></div>
         </div>  
     </div>  
