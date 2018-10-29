@@ -10,8 +10,8 @@ export class AccommodationService {
     api = null;
 
     constructor(private http: Http) {
-        //this.api = 'https://trapi.pythonanywhere.com/api/app/';
-        this.api = 'http://localhost:9009/api/app/';
+        this.api = 'https://trapi.pythonanywhere.com/api/app/';
+        //this.api = 'http://localhost:9009/api/app/';
     }
 
     getAccommodationTypes() {

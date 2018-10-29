@@ -12,7 +12,7 @@
         <ng-content></ng-content>
       </div>
       <div *ngIf="showFooter" class="modal-footer">
-        <button *ngIf="showSave" (click)=closeInternal() type="button" class="btn btn-default" data-dismiss="modal">Save</button>
+        <button *ngIf="showSave" (click)=saveInternal() type="button" class="btn btn-default" data-dismiss="modal">Save</button>
         <button *ngIf="showCancel" (click)=cancelInternal() type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
       </div>
     </div>

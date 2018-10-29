@@ -1,13 +1,12 @@
 <div class="container">
   <button type="button" class="btn btn-info btn-md" (click)=open(test)>Add Service</button>
 
-
-  <app-modalcomponent id="myAddServiceModal" dialogTitle="Add Service" #myAddServiceModal>
+  <app-modalcomponent id="myAddServiceModal" (onSave)="onSaveAction()" dialogTitle="Add Service" #myAddServiceModal>
     {{ bindModal(myAddServiceModal) }}
     <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
       <ngb-panel title="Servie Description">
         <ng-template ngbPanelContent>
-          <add-servicecomponent></add-servicecomponent>
+          <add-servicecomponent [(model)]="dataModel"></add-servicecomponent>
         </ng-template>
       </ngb-panel>
       <ngb-panel title="Ammenities">

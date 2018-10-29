@@ -8,8 +8,8 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <select class="form-control form-control-sm form-control-select" name="" id="">
-            <option *ngFor="let serviceType of serviceTypes" value="serviceType.AccommodationTypeId">{{serviceType.Name}}</option>           
+          <select class="form-control form-control-sm form-control-select" [(ngModel)]="_model.AccommodationType" name="" id="">
+            <option *ngFor="let serviceType of serviceTypes" [value]="serviceType.AccommodationTypeId">{{serviceType.Name}}</option>           
           </select>
         </div>
       </div>

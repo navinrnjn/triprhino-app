@@ -20,7 +20,7 @@ export class ModalcomponentComponent implements OnInit {
   @Input()
   showCancel: boolean = false;
 
-  @Output() onClose: EventEmitter<any> = new EventEmitter();
+  @Output() onSave: EventEmitter<any> = new EventEmitter();
 
   @Output() onCancel: EventEmitter<any> = new EventEmitter();
 
@@ -35,15 +35,21 @@ export class ModalcomponentComponent implements OnInit {
   constructor(private _rootNode: ElementRef) { }
 
   open() {
-    this.modalEl.modal('show');
+    if (this.modalEl != null) {
+      this.modalEl.modal('show');
+    }
+
   }
 
   close() {
-    this.modalEl.modal('hide');
+    if (this.modalEl != null) {
+      this.modalEl.modal('hide');
+    }
+
   }
 
-  closeInternal() { // close modal when click on times button in up-right corner
-    this.onClose.next(null); // emit event
+  saveInternal() { // save modal when click on times button in up-right corner
+    this.onSave.next(null); // emit event
     this.close();
   }
 

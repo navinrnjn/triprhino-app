@@ -12,6 +12,7 @@ import { Ammenities, IAmmenities } from '../../models/ammenities';
 })
 export class AccommodationComponent implements OnInit {
 
+  private dataModel: any = { AccommodationType: "" };
   private ammenities: IAmmenities[];
   private fileData: File[];
   private _modal = null;
@@ -28,8 +29,9 @@ export class AccommodationComponent implements OnInit {
   bindModal(modal) { this._modal = modal; }
 
   open(client) {
-    this._modal.open();
-    console.log({ client });
+    if (this._modal && this._modal != null) {
+      this._modal.open();
+    }
   }
 
   toggleSelect(data: IAmmenities) {
@@ -40,5 +42,9 @@ export class AccommodationComponent implements OnInit {
     if (element) {
       this.fileData = element.target.files;
     }
+  }
+
+  onSaveAction() {
+    console.log(this.dataModel);
   }
 }
