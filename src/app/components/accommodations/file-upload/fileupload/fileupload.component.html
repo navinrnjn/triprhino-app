@@ -2,7 +2,7 @@
   <div class="col-md-12">
     <div (drop)="drop($event)" (dragover)="allowDrop($event)">
       <div class="upload-drop-zone" id="drop-zone">
-          <input #hiddenInputFile type="file" multiple style="display:none" (change)="onChange($event)">
+          <input #hiddenInputFile type="file" m style="display:none" (change)="onChange($event)">
         <span>Just drag and drop files here Or <a (click)="openFileUploadControl(hiddenInputFile)">Browse file from here</a></span>
       </div>
     </div>
