@@ -16,6 +16,7 @@ import { EditContentComponent } from './components/content/edit.component';
 import { ViewContentComponent } from './components/content/view.component';
 import { LayoutComponent } from './components/shared/layout.component';
 import { FileuploadComponent } from './components/accommodations/file-upload/fileupload/fileupload.component';
+import { HotelregistrationComponent } from './components/hotelregistration/hotelregistration.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FileuploadComponent } from './components/accommodations/file-upload/fil
     EditContentComponent,
     ViewContentComponent,
     LayoutComponent,
+    HotelregistrationComponent,
   ],
   imports: [
     NgbModule,
