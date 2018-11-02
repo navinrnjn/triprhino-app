@@ -16,7 +16,6 @@ import { EditContentComponent } from './components/content/edit.component';
 import { ViewContentComponent } from './components/content/view.component';
 import { LayoutComponent } from './components/shared/layout.component';
 import { FileuploadComponent } from './components/accommodations/file-upload/fileupload/fileupload.component';
-import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +29,6 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     EditContentComponent,
     ViewContentComponent,
     LayoutComponent,
-    CarouselComponent
   ],
   imports: [
     NgbModule,
