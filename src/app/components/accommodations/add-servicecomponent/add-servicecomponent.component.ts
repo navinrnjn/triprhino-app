@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-// import { IServiceDescription } from 'src/app/models/servicedescription';
-import { AccommodationService } from 'src/app/dataservices/accommodation.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { AccommodationService } from '../../../dataservices/accommodation.service';
+import { ISelectItem } from '../../../models/servicedescription';
 
 @Component({
   selector: 'add-servicecomponent',
@@ -9,19 +9,42 @@ import { AccommodationService } from 'src/app/dataservices/accommodation.service
 })
 export class AddServicecomponentComponent implements OnInit {
 
+  private _model: any;
+  private serviceTypes: ISelectItem[];
+
   @Input()
-  //model: IServiceDescription;  
-  private serviceTypes: any[]=[];
+  get model() {
+    return this._model;
+  }
+  set model(value: any) {
+    if (value) {
+      this._model = value;
+      this.modelChange.emit(this._model);
+    }
+  }
+
+
+  @Output()
+  modelChange = new EventEmitter();
 
   constructor(private accommodationService: AccommodationService) {
-   
+
   }
 
   ngOnInit() {
-    var response = this.accommodationService.getAccommodationTypes().subscribe((result) => {
-      this.serviceTypes = result;
-      console.log(this.serviceTypes)
-    });
+    // To do : uncomment once the service is up
+    // To Do - remove once the api is up.
+    let serviceTypeData: ISelectItem[] = [
+      { name: "1 Bed Room", value: "1", isEnabled: true },
+      { name: "2 Bed Room", value: "2", isEnabled: true },
+      { name: "3 Bed Room", value: "3", isEnabled: true },
+      { name: "4 Bed Room", value: "4", isEnabled: true },
+    ]
+
+    this.serviceTypes = serviceTypeData;
+    // var response = this.accommodationService.getAccommodationTypes().subscribe((result) => {
+
+    // });
   }
 
 }

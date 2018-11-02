@@ -2,12 +2,12 @@
   <button type="button" class="btn btn-info btn-md" (click)=open(test)>Add Service</button>
 
 
-  <app-modalcomponent id="myAddServiceModal" dialogTitle="Add Service" #myAddServiceModal>
+  <app-modalcomponent id="myAddServiceModal" (onSubmitt)="onSave()" dialogTitle="Add Service" #myAddServiceModal>
     {{ bindModal(myAddServiceModal) }}
     <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
       <ngb-panel title="Servie Description">
         <ng-template ngbPanelContent>
-          <add-servicecomponent></add-servicecomponent>
+          <add-servicecomponent [(model)]="serviceDescriptionDataModel"></add-servicecomponent>
         </ng-template>
       </ngb-panel>
       <ngb-panel title="Ammenities">
@@ -22,7 +22,7 @@
       </ngb-panel>
       <ngb-panel title="Upload Images">
         <ng-template ngbPanelContent>
-          <app-fileupload></app-fileupload>
+          <app-fileupload [(fileModel)]="serviceDescriptionDataModel.imageData"></app-fileupload>
         </ng-template>
       </ngb-panel>
     </ngb-accordion>

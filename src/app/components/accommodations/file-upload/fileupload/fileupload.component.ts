@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, Input, Output, EventEmitter } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 
@@ -15,6 +15,21 @@ export interface IImageModel {
   styleUrls: ['./fileupload.component.css']
 })
 export class FileuploadComponent implements OnInit {
+
+  @Input()
+  get fileModel() {
+    return this.fileData;
+  }
+  set fileModel(value: any) {
+    if (value) {
+      this.fileData = value;
+      this.fileModelChange.emit(this.fileData);
+    }
+  }
+
+
+  @Output()
+  fileModelChange = new EventEmitter();
 
   private fileData: File[] = [];
   private duplicateFileName: string[] = [];
@@ -34,6 +49,7 @@ export class FileuploadComponent implements OnInit {
       while (count < eventdata.dataTransfer.files.length) {
         if (!this.validateDuplicateFileName(files[count], this.fileData)) {
           this.fileData.push(eventdata.dataTransfer.files[count]);
+          this.fileModelChange.emit(this.fileData);
         }
         count++;
       }
@@ -47,6 +63,7 @@ export class FileuploadComponent implements OnInit {
     });
     if (index1 >= 0) {
       this.fileData.splice(index1, 1)
+      this.fileModelChange.emit(this.fileData);
     }
 
     var index2 = this.thumbnailImages.findIndex(item => {
@@ -119,6 +136,7 @@ export class FileuploadComponent implements OnInit {
       while (count < eventdata.target.files.length) {
         if (!this.validateDuplicateFileName(files[count], this.fileData)) {
           this.fileData.push(eventdata.target.files[count]);
+          this.fileModelChange.emit(this.fileData);
         }
         count++;
       }
