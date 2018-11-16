@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IServiceDescription } from 'src/app/models/servicedescription';
 import { AccomodationService } from 'src/app/views/Accomodation/accomodation/accomodation.service';
 
 @Component({
@@ -9,8 +8,7 @@ import { AccomodationService } from 'src/app/views/Accomodation/accomodation/acc
 })
 export class AddServicecomponentComponent implements OnInit {
 
-  @Input()
-  model: IServiceDescription;  
+  @Input()  
   private serviceTypes: any[]=[];
 
   constructor(private accomodationService: AccomodationService) {

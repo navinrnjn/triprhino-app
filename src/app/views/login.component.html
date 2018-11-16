@@ -1,3 +1,79 @@
-<p>
-  login works!
-</p>
+<div class="container">
+  <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#mySigninModal">Login</button>
+  <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#mySigninModal">Register</button>
+  <!-- Modal -->
+  <div id="mySigninModal" class="modal fade custom-modal-top" role="dialog">
+    <div class="modal-dialog modal-md">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+            <ngb-tabset class="tabSignIn">
+                <ngb-tab title="Login">
+                  <ng-template ngbTabContent>
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                <div *ngIf="f.username.errors.required">Username is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Password is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button [disabled]="loading" class="btn btn-primary">Login</button>                            
+                        </div>
+                        <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+                    </form>
+                      <input type="checkbox" name="Remember"/>Remember Me<span>Show Password</span>
+                      <button (click)="socialSignIn('facebook')">Sign in with Facebook</button>
+                      <button (click)="socialSignIn('google')">Sign in with Google</button>
+                  </ng-template>
+                </ngb-tab>
+                <ngb-tab title="Register">
+                    <ng-template ngbTabContent>
+                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                    <div *ngIf="f.username.errors.required">Username is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                    <div *ngIf="f.password.errors.required">Password is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button [disabled]="loading" class="btn btn-primary">Register</button>                                
+                            </div>
+                            <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+                        </form>                        
+                        <button (click)="socialSignIn('facebook')">Continue with Facebook</button>
+                        <button (click)="socialSignIn('google')">Continue with Google</button>
+                    </ng-template>
+                  </ngb-tab>
+              </ngb-tabset>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button> -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
