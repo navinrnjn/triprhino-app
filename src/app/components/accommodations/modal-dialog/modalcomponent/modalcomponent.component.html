@@ -1,0 +1,20 @@
+<!-- Modal -->
+<div id="{{modal_id}}" class="modal fade custom-modal-top" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{dialogTitle}}</h4>
+      </div>
+      <div class="modal-body">
+        <ng-content></ng-content>
+      </div>
+      <div *ngIf="showFooter" class="modal-footer">
+        <button *ngIf="showSave" (click)=submittInternal() type="button" class="btn btn-default" data-dismiss="modal">Save</button>
+        <button *ngIf="showCancel" (click)=cancelInternal() type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
