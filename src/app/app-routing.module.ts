@@ -10,7 +10,7 @@ import { ViewContentComponent } from './components/content/view.component';
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent }, 
   { path: 'accommodations', component: AccommodationComponent },
-  { path: 'contents/edit', component: EditContentComponent },
+  { path: 'contents/create', component: EditContentComponent },
   { path: 'contents/view', component: ViewContentComponent },
   { path: 'error', component: ErrorComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
