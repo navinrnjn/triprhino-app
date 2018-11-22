@@ -1,0 +1,143 @@
+<div class="container" style="min-height: 600px">
+  <ng-container *ngIf="!isUser; then addHotels else uploadDocuments"></ng-container>
+
+  <ng-template #addHotels>
+    <div class="">
+      <h2>Upload KYC Documents</h2>
+      <div class="table" style="margin-top:20px;">
+        <div class="row form-group">
+          <div class="col-md-3">
+            <label class="custom-label" for="idTypeSelectContainer">ID Type</label>
+          </div>
+          <div id="idTypeSelectContainer" class="col-md-9">
+            <select class="form-control custom-input form-control custom-input-md form-control custom-input-select"
+              [(ngModel)]="selectedIdType">
+              <option *ngFor="let idType of idTypes" [value]="idType.name">{{idType.name}}</option>
+            </select>
+          </div>
+        </div>
+        <div *ngIf="selectedIdType" class="row form-group">
+          <div class="col-md-3">
+            <label class="custom-label" for="idNumberContainer">{{selectedIdType}} Number</label>
+          </div>
+          <div id="idNumberContainer" class="col-md-9">
+            <input class="form-control custom-input input-md" type="text">
+          </div>
+        </div>
+        <div *ngIf="selectedIdType" class="row form-group">
+          <div class="col-md-3">
+            <label class="custom-label" for="idFileUploadContainer">Upload {{selectedIdType}}</label>
+          </div>
+          <div id="idFileUploadContainer" class="col-md-9">
+            <app-fileupload></app-fileupload>
+          </div>
+        </div>
+        <div *ngIf="selectedIdType" class="row form-group">
+          <div class="col-md-12">
+            <button type="button" (click)="submittFormData()" class="btn btn-success pull-right">Submitt</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #uploadDocuments>
+    <h2>Add Properties <i (click)="openHotelRegistrationModal()" class="material-icons" style="vertical-align: text-top;color:#02b875;font-size: 30px">
+        note_add
+      </i></h2>
+    <div class="table" style="margin-top:30px;">
+      <span>No propertis to show.</span>
+    </div>
+  </ng-template>
+</div>
+<app-modalcomponent id="myNotificationModal" (onSubmitt)="onSave()" dialogTitle="Notification" #myNotificationModal>
+  {{ bindNotificationModal(myNotificationModal) }}
+  <div class="container">
+    <span>Data sucesfully Saved.</span>
+  </div>
+</app-modalcomponent>
+
+<app-modalcomponent id="myHotelRegistrationModal" (onSubmitt)="onSave()" dialogTitle="Add Hotel"
+  #myHotelRegistrationModal>
+  {{ bindHotelRegistrationModal(myHotelRegistrationModal) }}
+  <ngb-accordion #acc="ngbAccordion" [closeOthers]="true" activeIds="ngb-panel-0">
+    <ngb-panel title="Hotel Details">
+      <ng-template ngbPanelContent>
+        <div class="container">
+          <div class="row form-group">
+            <div class="col-md-2">
+              <label class="custom-label" for="nameContainer">Name</label>
+            </div>
+            <div id="nameContainer" class="col-md-7"><input class="form-control custom-input" type="text"></div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-2"><label class="custom-label" for="websiteUrlContainer">WebsiteUrl</label></div>
+            <div id="websiteUrlContainer" class="col-md-7"><input class="form-control custom-input" type="text"></div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-2"><label class="custom-label" for="descriptionContainer">Description</label></div>
+            <div id="descriptionContainer" class="col-md-7"><textarea class="form-control custom-input" type="text"></textarea></div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel title="Contact Details">
+      <ng-template ngbPanelContent>
+        <div class="container">
+          <div class="row form-group">
+            <div class="col-md-2"><label class="custom-label" for="phoneContainer">Phone</label></div>
+            <div id="phoneContainer" class="col-md-7"><input class="form-control custom-input" type="text"></div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-2"><label class="custom-label" for="phoneAltContainer">Phone Alt.</label></div>
+            <div id="phoneAltContainer" class="col-md-7"><input class="form-control custom-input" type="text"></div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-2"><label class="custom-label" for="emailContainer">Email</label></div>
+            <div id="emailContainer" class="col-md-7"><input class="form-control custom-input" type="text"></div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-2"><label class="custom-label" for="countryContainer">Country</label></div>
+            <div id="countryContainer" class="col-md-7"><input class="form-control custom-input" type="text"></div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-2"><label class="custom-label" for="stateContainer">State</label></div>
+            <div id="stateContainer" class="col-md-7"><input class="form-control custom-input" type="text"></div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-2"><label class="custom-label" for="localityContainer">Locality</label></div>
+            <div id="localityContainer" class="col-md-7"><input class="form-control custom-input input-md" type="text"></div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-2"><label class="custom-label" for="zipCodeContainer">Zip code</label></div>
+            <div id="zipCodeContainer" class="col-md-7"><input class="form-control custom-input" type="text"></div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-2"><label class="custom-label" for="addressContainer">Address</label></div>
+            <div id="addressContainer" class="col-md-7"><textarea class="form-control custom-input" type="text"></textarea></div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-2"><label class="custom-label" for="landmarkContainer">Landmark</label></div>
+            <div id="landmarkContainer" class="col-md-7"><input class="form-control custom-input" type="text"></div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel title="Ammenities">
+      <ng-template ngbPanelContent>
+        <div class="row">
+          <div class="col-md-12">
+            <div *ngFor="let amenity of ammenities" class="col-sm-1" style="cursor:pointer">
+              <i class="material-icons" (click)="toggleSelect(amenity)" [ngClass]="{'ammenitySelected': amenity.isPresent}"
+                [title]="amenity.name">{{amenity.icon}}</i>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel title="Upload Images">
+      <ng-template ngbPanelContent>
+        <app-fileupload></app-fileupload>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+</app-modalcomponent>

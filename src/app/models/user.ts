@@ -1,9 +1,6 @@
 export class User {
 
-    UserId: string;
-    OpenId: string;
-    Fullname: string;
-
-    constructor() { }
-
+    id: number;
+    username: string;
+    password: string;    
 }

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="_model">
   <div class="row container-row-leftspace">
     <div class="col-md-2 input-spacer">
       <div class="row">
@@ -8,8 +8,8 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <select class="form-control form-control-sm form-control-select" name="" id="">
-            <option *ngFor="let serviceType of serviceTypes" value="serviceType.AccommodationTypeId">{{serviceType.Name}}</option>           
+          <select class="form-control form-control-sm form-control-select" [(ngModel)]="_model.serviceTypeId" name="" id="">
+            <option *ngFor="let serviceType of serviceTypes" [value]="serviceType.value">{{serviceType.name}}</option>           
           </select>
         </div>
       </div>
@@ -23,7 +23,7 @@
       <div class="row">
         <div class="col-md-12 input-group">
           <span class="input-group-addon"><i class="fa fa-inr"></i></span>
-          <input class="form-control input-sm col-md-3" type="number">
+          <input [(ngModel)]="_model.price" class="form-control input-sm col-md-3" type="number">
         </div>
       </div>
     </div>
@@ -36,7 +36,7 @@
       <div class="row">
         <div class="col-md-12 input-group">
           <span class="input-group-addon"><i class="fa fa-book"></i></span>
-          <input class="form-control input-sm col-md-3" type="number">
+          <input [(ngModel)]="_model.inventory" class="form-control input-sm col-md-3" type="number">
         </div>
       </div>
     </div>
@@ -49,7 +49,7 @@
       <div class="row">
         <div class="col-md-12 input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-          <input class="form-control input-sm col-md-2" type="number">
+          <input [(ngModel)]="_model.capacity" class="form-control input-sm col-md-2" type="number">
         </div>
       </div>
     </div>
@@ -62,7 +62,7 @@
       <div class="row">
         <div class="col-md-12 input-group">
           <span class="input-group-addon"><i class="fa fa-inr"></i></span>
-          <input class="form-control input-sm col-md-2" type="number">
+          <input [(ngModel)]="_model.extras" class="form-control input-sm col-md-2" type="number">
         </div>
       </div>
     </div>
@@ -74,7 +74,7 @@
           <span>Description</span>
         </div>
         <div class="col-md-8">
-            <textarea class="form-control" style="height: auto" rows="2"></textarea>
+            <textarea [(ngModel)]="_model.description"  class="form-control" style="height: auto" rows="2"></textarea>
           </div>
       </div>      
     </div>
