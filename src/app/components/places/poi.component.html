@@ -1,0 +1,106 @@
+<div class="container">
+    <div class="col-lg-12">
+        <section class="panel">
+        <header class="panel-heading">
+            <div class="col-md-12 col-md-offset-0 heading2 animate-box">
+                <h2>POINT OF INTERESTS</h2>
+            </div>
+        </header>
+        <div class="panel-body">
+            <div class="form">
+            <form class="form-validate form-horizontal" id="feedback_form" method="get" action="">
+                <div class="form-group ">
+                    <label for="ctitle" class="control-label col-lg-2">Title <span class="required">*</span></label>
+                    <div class="col-lg-10">
+                        <input class="form-control" id="ctitle" name="title" minlength="5" type="text" required />
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="csubtitle" class="control-label col-lg-2">Sub Title <span class="required">*</span></label>
+                    <div class="col-lg-10">
+                        <textarea class="form-control " id="csubtitle" type="text" name="subtitle" rows="2" maxlength="100"></textarea>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="cshortdesc" class="control-label col-lg-2">Short Description</label>
+                    <div class="col-lg-10">
+                        <textarea  class="form-control " id="cshortdesc" type="text" name="shortdesc" rows="3" maxlength="250"></textarea>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="cdesc" class="control-label col-lg-2">Description <span class="required">*</span></label>
+                    <div class="col-lg-10">
+                        <textarea class="form-control" id="cdesc" name="desc" minlength="5" type="textarea" rows="10" maxlength="1000" required></textarea>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="ccategory" class="control-label col-lg-2">Category <span class="required">*</span></label>
+                    <div class="col-lg-10">
+                        <select class="form-control form-control-sm form-control-select" id="ccategory" name="category">
+                            <option>--SELECT--</option>           
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="csubcategory" class="control-label col-lg-2">Sub-Category <span class="required">*</span></label>
+                    <div class="col-lg-10">
+                        <select class="form-control form-control-sm form-control-select" id="csubcategory" name="subcategory">
+                            <option>--SELECT--</option>           
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="cstate" class="control-label col-lg-2">State <span class="required">*</span></label>
+                    <div class="col-lg-10">
+                        <select class="form-control form-control-sm form-control-select" id="cstate" name="state">
+                            <option>--SELECT--</option>           
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="clocality" class="control-label col-lg-2">Locality</label>
+                    <div class="col-lg-10">
+                        <select class="form-control form-control-sm form-control-select" id="clocality" name="locality">
+                            <option>--SELECT--</option>           
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="cseason" class="control-label col-lg-2">Season</label>
+                    <div class="col-lg-10">
+                        <select class="form-control form-control-sm form-control-select" id="cseason" name="season">
+                            <option>--SELECT--</option>           
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="cwebsiteurl" class="control-label col-lg-2">Website Url</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" id="cwebsiteurl" name="websiteurl" minlength="5" type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="clocationurl" class="control-label col-lg-2">Location Map Url</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" id="clocationurl" name="locationurl" minlength="5" type="text" />
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="ctags" class="control-label col-lg-2">Tags <span class="required">*</span></label>
+                    <div class="col-lg-10">
+                        <input class="form-control" id="ctags" name="tags" type="text" maxlength="150" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <button class="btn btn-primary" type="submit">Save</button>
+                        <button class="btn btn-default" type="reset">Reset</button>
+                    </div>
+                </div>
+            </form>
+            </div>
+
+        </div>
+        </section>
+    </div>
+</div>

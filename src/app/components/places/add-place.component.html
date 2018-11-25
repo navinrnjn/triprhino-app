@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="col-lg-12">
+        <section class="panel">
+        <header class="panel-heading">
+            <div class="col-md-12 col-md-offset-0 heading2 animate-box">
+                <h2>TELL US ABOUT YOUR PLACE</h2>
+            </div>
+        </header>
+        <div class="panel-body">
+            <div class="form">
+            <form class="form-validate form-horizontal" id="place_form" method="get" action="">
+                <div class="form-group ">
+                    <label for="cname" class="control-label col-lg-2">Name <span class="required">*</span></label>
+                    <div class="col-lg-10">
+                        <input class="form-control" [(ngModel)]="place.Name" id="cname" name="name" minlength="5" type="text" required />
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="ctitle" class="control-label col-lg-2">Title <span class="required">*</span></label>
+                    <div class="col-lg-10">
+                        <input class="form-control" [(ngModel)]="place.Title" id="ctitle" name="title" minlength="5" type="text" required />
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="csubtitle" class="control-label col-lg-2">Sub Title <span class="required">*</span></label>
+                    <div class="col-lg-10">
+                        <textarea class="form-control" [(ngModel)]="place.SubTitle" id="csubtitle" type="text" name="subtitle" rows="2" maxlength="100"></textarea>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="cshortdesc" class="control-label col-lg-2">Short Description</label>
+                    <div class="col-lg-10">
+                        <textarea  class="form-control " [(ngModel)]="place.ShortDesc" id="cshortdesc" type="text" name="shortdesc" rows="3" maxlength="250"></textarea>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="cdesc" class="control-label col-lg-2">Description <span class="required">*</span></label>
+                    <div class="col-lg-10">
+                        <textarea class="form-control" [(ngModel)]="place.Desc" id="cdesc" name="desc" minlength="5" type="textarea" rows="10" maxlength="1000" required></textarea>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="cgeo" class="control-label col-lg-2">Geography</label>
+                    <div class="col-lg-10">
+                        <textarea  class="form-control" [(ngModel)]="place.Geography" id="cgeo" type="text" name="geo" rows="3" maxlength="250"></textarea>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="cclimate" class="control-label col-lg-2">Climate</label>
+                    <div class="col-lg-10">
+                        <textarea  class="form-control" [(ngModel)]="place.Climate" id="cclimate" type="text" name="climate" rows="3" maxlength="250"></textarea>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="ctransportation" class="control-label col-lg-2">Transportation</label>
+                    <div class="col-lg-10">
+                        <textarea  class="form-control" [(ngModel)]="place.Transportation" id="ctransportation" type="text" name="transportation" rows="3" maxlength="500"></textarea>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="cvisittime" class="control-label col-lg-2">Best Time to Visit</label>
+                    <div class="col-lg-10">
+                        <textarea  class="form-control" [(ngModel)]="place.BestTimeToVisit" id="cvisittime" type="text" name="visittime" rows="3" maxlength="250"></textarea>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="cmapurl" class="control-label col-lg-2">Map Url</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" [(ngModel)]="place.MapUrl" id="cmapurl" name="mapurl" minlength="5" type="text" />
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="ctags" class="control-label col-lg-2">Tags</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" [(ngModel)]="place.Tags" id="ctags" name="tags" type="text" maxlength="150" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <button class="btn btn-info" type="button" (click)="addPlace()">Submit</button>
+                        <button class="btn" type="reset">Reset</button>
+                    </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </section>
+  </div>
+</div>
