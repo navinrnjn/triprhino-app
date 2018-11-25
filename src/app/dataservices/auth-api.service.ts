@@ -3,7 +3,7 @@ import {Http, Headers} from '@angular/http';
 import {observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
-const apiUrl = "http://trapi.pythonanywhere.com/api/Login";
+const apiUrl = "http://trapi.pythonanywhere.com/api/app/Authenticate";
 const logRegApiUrl = "http://trapi.pythonanywhere.com/api/app/Register";
 @Injectable()
 export class AuthApiService {
@@ -24,8 +24,8 @@ export class AuthApiService {
       }); 
     });
   }
-  login(username: string, password: string) {
-    return this.http.post(logRegApiUrl, { username, password })
+  login(formPayLoad) {
+    return this.http.post(logRegApiUrl, { formPayLoad })
         .pipe(map(user => {
             // login successful if there's a jwt token in the response
             if (user) {

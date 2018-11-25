@@ -8,12 +8,12 @@ import {
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthApiService } from 'src/app/dataservices/auth-api.service';
-import { UserDetailsService } from 'src/app/dataservices/user-details.service';
+import { AuthApiService } from '../../dataservices/auth-api.service';
+import { UserDetailsService } from '../../dataservices/user-details.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styles:[]
+  styleUrls:['./login.component.css']
 })
 export class LoginComponent implements OnInit {
   public responseData: any;
@@ -23,6 +23,10 @@ export class LoginComponent implements OnInit {
   DisplayName: '',
   UserSource: ''  
   };  
+  public formPayLoad = {
+    Email:'',
+    Password:''
+  }
   loginForm: FormGroup;
     loading = false;
     submitted = false;
@@ -39,16 +43,17 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
   });
    // reset login status
-   this.authApiService.logout();
+  // this.authApiService.logout();
 
    // get return url from route parameters or default to '/'
-   this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+  // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
 }
 // convenience getter for easy access to form fields
 get f() { return this.loginForm.controls; }
 
 onSubmit() {
-  this.submitted = true;
+  console.log("Submitted");
+ /* this.submitted = true;
 
   // stop here if form is invalid
   if (this.loginForm.invalid) {
@@ -56,7 +61,9 @@ onSubmit() {
   }
 
   this.loading = true;
-  this.authApiService.login(this.f.username.value, this.f.password.value)
+  this.formPayLoad.Email = this.f.username.value;
+  this.formPayLoad.Password = this.f.password.value;
+  this.authApiService.login(this.formPayLoad)
       .pipe(first())
       .subscribe(
           data => {
@@ -66,6 +73,7 @@ onSubmit() {
               this.error = error;
               this.loading = false;
           });
+          */
 }
   public socialSignIn(socialPlatform : string) {
     let socialPlatformProvider;

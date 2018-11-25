@@ -1,6 +1,7 @@
-<div class="container">
-  <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#mySigninModal">Login</button>
-  <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#mySigninModal">Register</button>
+<ul>
+  <li data-toggle="modal" class="liStyle" data-target="#mySigninModal">Login</li>
+  <li data-toggle="modal" class="liStyle" data-target="#mySigninModal">Register</li>
+</ul>
   <!-- Modal -->
   <div id="mySigninModal" class="modal fade custom-modal-top" role="dialog">
     <div class="modal-dialog modal-md">
@@ -15,7 +16,7 @@
             <ngb-tabset class="tabSignIn">
                 <ngb-tab title="Login">
                   <ng-template ngbTabContent>
-                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <form [formGroup]="loginForm">
                         <div class="form-group">
                             <label for="username">Username</label>
                             <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
@@ -31,7 +32,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <button [disabled]="loading" class="btn btn-primary">Login</button>                            
+                            <input type="submit" (click)="onSubmit()" [disabled]="loading" class="btn btn-primary" value="Login"/>                            
                         </div>
                         <div *ngIf="error" class="alert alert-danger">{{error}}</div>
                     </form>
@@ -42,7 +43,7 @@
                 </ngb-tab>
                 <ngb-tab title="Register">
                     <ng-template ngbTabContent>
-                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                        <form [formGroup]="loginForm">
                             <div class="form-group">
                                 <label for="username">Username</label>
                                 <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
@@ -76,4 +77,3 @@
     </div>
   </div>
 
-</div>

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,6 +23,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthApiService } from './dataservices/auth-api.service';
 import { UserDetailsService } from './dataservices/user-details.service';
 import { AlertService } from './dataservices/alert.service';
+import { LoginComponent } from './components/login/login.component';
 import {
   SocialLoginModule,
   AuthServiceConfig,
@@ -51,6 +52,7 @@ import { AddPlaceComponent } from './components/places/add-place.component';
     PlacesComponent,
     SearchSidebarComponent,
     AddPlaceComponent,
+    LoginComponent
   ],
   imports: [
     NgbModule,
@@ -59,8 +61,11 @@ import { AddPlaceComponent } from './components/places/add-place.component';
     BrowserAnimationsModule,
     HttpModule,
     FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    SocialLoginModule
   ],
-  providers: [ApiService,AuthApiService, UserDetailsService,AlertService,
+  providers: [ApiService, AuthApiService, UserDetailsService, AlertService,
     {
       provide: AuthServiceConfig,
       useFactory: getAuthServiceConfigs
@@ -75,16 +80,16 @@ export class AppModule { }
 // Configs
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
-      [
-        {
-          id: FacebookLoginProvider.PROVIDER_ID,
-          provider: new FacebookLoginProvider("318747382261800")
-        },
-        {
-          id: GoogleLoginProvider.PROVIDER_ID,
-          provider: new GoogleLoginProvider("237803725768-b6k9goml4m417u67clitvrrjf4rbfsmv.apps.googleusercontent.com")
-        }
-      ]
+    [
+      {
+        id: FacebookLoginProvider.PROVIDER_ID,
+        provider: new FacebookLoginProvider("318747382261800")
+      },
+      {
+        id: GoogleLoginProvider.PROVIDER_ID,
+        provider: new GoogleLoginProvider("237803725768-b6k9goml4m417u67clitvrrjf4rbfsmv.apps.googleusercontent.com")
+      }
+    ]
   );
   return config;
 }
