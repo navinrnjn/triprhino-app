@@ -12,8 +12,8 @@ import { ErrorComponent } from './components/shared/error.component';
 import { AccommodationComponent } from './components/accommodations/accommodation.component';
 import { AddServicecomponentComponent } from './components/accommodations/add-servicecomponent/add-servicecomponent.component';
 import { ModalcomponentComponent } from './components/accommodations/modal-dialog/modalcomponent/modalcomponent.component';
-import { EditContentComponent } from './components/content/edit.component';
-import { ViewContentComponent } from './components/content/view.component';
+import { POIComponent } from './components/places/poi.component';
+import { PlaceInfoComponent } from './components/places/place-info.component';
 import { LayoutComponent } from './components/shared/layout.component';
 import { FileuploadComponent } from './components/accommodations/file-upload/fileupload/fileupload.component';
 import { HotelregistrationComponent } from './components/hotelregistration/hotelregistration.component';
@@ -22,13 +22,17 @@ import { ErrorInterceptor } from './helpers/error-interceptor';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthApiService } from './dataservices/auth-api.service';
 import { UserDetailsService } from './dataservices/user-details.service';
-import {AlertService} from './dataservices/alert.service';
+import { AlertService } from './dataservices/alert.service';
 import {
   SocialLoginModule,
   AuthServiceConfig,
   GoogleLoginProvider,
   FacebookLoginProvider,
 } from "angular-6-social-login";
+import { SampleComponent } from './components/places/sample.component';
+import { PlacesComponent } from './components/places/places.component';
+import { SearchSidebarComponent } from './components/search/search-sidebar.component';
+import { AddPlaceComponent } from './components/places/add-place.component';
 
 @NgModule({
   declarations: [
@@ -39,10 +43,14 @@ import {
     AddServicecomponentComponent,
     ModalcomponentComponent,
     FileuploadComponent,
-    EditContentComponent,
-    ViewContentComponent,
+    POIComponent,
+    PlaceInfoComponent,
     LayoutComponent,
     HotelregistrationComponent,
+    SampleComponent,
+    PlacesComponent,
+    SearchSidebarComponent,
+    AddPlaceComponent,
   ],
   imports: [
     NgbModule,
